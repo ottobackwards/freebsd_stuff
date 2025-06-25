@@ -3,32 +3,45 @@ all:
     ansible_python_interpreter: auto_silent
     # daily driver essentials :)
     packages:
+      - alacritty
       - bat
       - curl
       - doas
       - duf
       - dust
+      - fd
+      - firefox
+      - foot
       - freecolor
+      - fuzzle
       - fzf
       - git
       - gmake
+      - lazygit
+      - node
+      - noto-emoji
+      - npm
       - neovim
-      - postfix
       - ripgrep
+      - rust
+      - screen
+      - seatd
       - starship
+      - sway
+      - swayidle
+      - swaylock-effects
       - tmux
+      - vim
+      - wayland
+      - wezterm
       - wget
+      - wtype
+      - www/links
+      - www/w3m
       - zoxide
       - zsh
   hosts:
-    qemu:
-      ansible_host: localhost
-      ansible_port: 2222
-      username: CHANGEME
-    ec2:
-      ansible_python_interpreter: /usr/local/bin/python3
-      ansible_host: CHANGEME
-    lightsail:
-      ansible_python_interpreter: /usr/local/bin/python3
-      ansible_host: CHANGEME
-      ansible_ssh_private_key_file: CHANGEME
+    valinor:
+      ansible_host: valinor
+      ansible_port: 22
+      username: otto
