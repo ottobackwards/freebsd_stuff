@@ -32,6 +32,7 @@ all:
       - swaylock-effects
       - tmux
       - vim
+      - waybar
       - wayland
       - wezterm
       - wget
