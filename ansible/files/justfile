@@ -1,0 +1,14 @@
+nvim:
+  echo "running nvim"
+  nvim --headless  '+Lazy! update' +qa
+
+yazi:
+  echo "Updating yazi"
+  ya pack -u
+
+tmux:
+  echo "Updating tmux"
+  .tmux/plugins/tpm/bin/update_plugins all
+
+update: yazi tmux nvim
+

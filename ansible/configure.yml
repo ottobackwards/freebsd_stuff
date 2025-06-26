@@ -66,6 +66,12 @@
         dest: "$HOME/.screenrc"
         mode: "0640"
       become: false
+    - name: Put a user justfile in place
+      copy:
+        src: "files/justfile"
+        dest: "$HOME/justfile"
+        mode: "0640"
+      become: false
 #    - name: Configure doas
 #      copy:
 #        dest: "/usr/local/etc/doas.conf"

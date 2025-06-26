@@ -17,6 +17,8 @@ all:
       - fzf
       - git
       - gmake
+      - jujutsu
+      - just
       - lazygit
       - node
       - noto-emoji
@@ -39,6 +41,7 @@ all:
       - wtype
       - www/links
       - www/w3m
+      - yazi
       - zoxide
       - zsh
   hosts:
