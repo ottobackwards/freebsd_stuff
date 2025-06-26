@@ -2,7 +2,7 @@
 - name: "Configure hosts"
   hosts: all
   become: true
-  become_method: su
+  become_method: doas
   gather_facts: false
   tasks:
     - name: Wait for SSH access
@@ -11,7 +11,7 @@
         search_regex: OpenSSH
         port: 22
       vars:
-        #        ansible_connection: local
+        ansible_connection: local
         ansible_python_interpreter: auto_silent
       become: false
     - name: Gather facts
@@ -52,6 +52,18 @@
       copy:
         src: "files/dot-zshrc"
         dest: "$HOME/.zshrc"
+        mode: "0640"
+      become: false
+    - name: Put a user wezterm in place
+      copy:
+        src: "files/wezterm.lua"
+        dest: "$HOME/.wezterm.lua"
+        mode: "0640"
+      become: false
+    - name: Put a user screenrc in place
+      copy:
+        src: "files/screenrc"
+        dest: "$HOME/.screenrc"
         mode: "0640"
       become: false
 #    - name: Configure doas

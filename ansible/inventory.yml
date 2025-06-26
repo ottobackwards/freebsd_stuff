@@ -13,7 +13,7 @@ all:
       - firefox
       - foot
       - freecolor
-      - fuzzle
+      - fuzzel
       - fzf
       - git
       - gmake
@@ -46,3 +46,4 @@ all:
       ansible_host: valinor
       ansible_port: 22
       username: otto
+      ansible_python_interpreter: /usr/local/bin/python3
